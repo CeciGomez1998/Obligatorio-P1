@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/Importador.js"></script>
+    <script src="js/codigo.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div id="contenedor">
+        <div id="cabezal" class="clearfix">
+            <img id="logo" src="css/images/cyd.png" alt="logo">
+            <ul id="navPrincipalEmpresa">
+                <li id="btnSeccionEmpresa">
+                    <a>Pestaña 1</a>
+                </li>
+                <li id="btnSeccionEstadisticasEmpresa">
+                    <a>Pestaña 2</a>
+                </li>
+                <li id="btnLogOutEmpresa">
+                    <a>Pestaña 3</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="contenido">
+            <div id="seccionInicio">
+                <h1>Seleccion Perfil</h1>
+                <input type="button" value="Empresa" id="btnEmpresa"><br><br>
+                <input type="button" value="Importador" id="btnImportador"><br>
+            </div>
+            <hr>
+            <div id="seccionLoginEmpresa">
+                <h1>Interfaz Login Empresa</h1>
+
+                <label for="txtNombreEmpresa">Nombre de usuario:</label>
+                <input type="text" id="txtNombreEmpresa"><br>
+                <label for="txtContrasenaEmpresa">Contraseña:</label>
+                <input type="password" id="txtContrasenaEmpresa"><br><br>
+
+                <input type="button" value="Ingresar" id="btnIngresarEmpresa">
+                <p id="pAvisosLoginEmpresa"></p>
+            </div>
+            <hr>
+            <div id="seccionLoginImportador">
+                <h1>Interfaz Login Importador</h1>
+
+                <label for="txtNombreImportador">Nombre de usuario:</label>
+                <input type="text" id="txtNombreImportador"><br>
+                <label for="txtContrasenaImportador">Contraseña:</label>
+                <input type="password" id="txtContrasenaImportador"><br><br>
+
+                <input type="button" value="Ingresar" id="btnIngresarImportador">
+                <p id="pAvisosLoginImportador"></p>
+            </div>
+
+            <br><br>
+            <hr>
+            <div id="seccionRegistro">
+                <h3>Registro Importador</h3>
+                <label for="nombreRegistro">Ingrese su nombre:</label>
+                <input type="text" id="nombreRegistro"><br><br>
+                <label for="usernameRegistro">Ingrese username:</label>
+                <input type="text" id="usernameRegistro"><br><br>
+                <label for="passwordRegistro">Ingrese una contraseña:</label>
+                <input type="password" id="passwordRegistro">
+                <h6>(La contraseña deberá tener un minimo de 5 caracteres, <br> contando con
+                    al menos una mayúscula y un número.)</h6>
+                <label for="passwordRegistro">Seleccione una foto de perfil </label>
+                <form name="subida-imagenes" type="POST" enctype="multipart/formdata">
+                    <input type="file" name="imagen" />
+                </form>
+                <br>
+                <br>
+                <input type="button" value="Registrar" id="btnRegistrar">
+                <p id="pAvisosRegistro"></p>
+                <div id="seccionBotonVolver">
+                    <input type="button" value="Volver" id="btnVolver">
+                </div>
+            </div>
+            <hr><br>
+
+            <div id="seccionCancelacionSolicitudCarga">
+                <h3>Solicitudes de carga</h3>
+                <br>
+                <input type="button" value="Crear" id="crearSolicitudCarga">
+                <br>
+                <br>
+                <table class="tablaSolicitud">
+                    <tr>
+                        <th>Tipo de mercadería</th>
+                        <th>Descripción</th>
+                        <th>Puerto de origen</th>
+                        <th>Cantidad contenedores</th>
+                        <th>ID Empresa</th>
+                    </tr>
+                    <tr>
+                        <td> <select id="slcTipoMercaderia">
+                                <option value="Peligrosa">CARGA_PELIGROSA</option>
+                                <option value="General">CARGA_GENERAL</option>
+                                <option value="Refrigerado">REFRIGERADO</option>
+                        </td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                    </tr>
+                    <tr>
+                        <td> <select id="slcTipoMercaderia">
+                                <option value="Peligrosa">CARGA_PELIGROSA</option>
+                                <option value="General">CARGA_GENERAL</option>
+                                <option value="Refrigerado">REFRIGERADO</option>
+                        </td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                    </tr>
+                    <tr>
+                        <td> <select id="slcTipoMercaderia">
+                                <option value="Peligrosa">CARGA_PELIGROSA</option>
+                                <option value="General">CARGA_GENERAL</option>
+                                <option value="Refrigerado">REFRIGERADO</option>
+                        </td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                        <td>Hola Ceci</td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <input type="button" value="Cargar" id="cargarSolicitud"> <input type="button" value="Consulta"
+                    id="consultaSolicitud"> <input type="button" value="Cancelar Solicitud" id="cancelarSolicitud">
+                <br>
+                <br>
+            </div>
+            <hr>
+            <div id="seccionInformacionEstadisticaImportador">
+                <h3>Información Estadística Importador</h3>
+                <p id="pPorcCance">Porcentaje de Cancelaciones:</p>
+                <p id="pProxLlegadas">Proximas llegadas con carga de importaciones:</p>
+                <p id="pPorcentajeDifLin">Porcentaje de las diferentes lineas con las que ha cargado:</p>
+                <h6>(Solo se cuentan envíos no contenedores y se omiten las empresas con porcentaje cero.)</h6>
+                <div id="seccionBotonVolver">
+                    <input type="button" value="Volver" id="btnVolver">
+                </div>
+            </div>
+        </div><!-- FIN CONTENIDO -->
+        <div id="pie" style="text-align: center">
+            <a href="https://www.ort.edu.uy" target="_blank">
+                <img class="BotonOrt" src="css/ort.png" style="
+                width: 65px;
+                margin-left: 5px;
+                margin-right: 5px;
+      "> </a>
+            </a>
+        </div><!-- FIN PIE -->
+    </div><!-- FIN CONTENEDOR -->
+</body>
+
+</html>
