@@ -5,64 +5,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="js/Importador.js"></script>
-    <script src="js/codigo.js"></script>
+    <title>CYD Desarrollo</title>
+    <link rel="icon" href="css/images/cyd.png">
     <link rel="stylesheet" href="css/estilos.css">
+    <script type="text/javascript" src="js/ui/ui.js"></script>
+    <script type="text/javascript" src="js/entities/empresa.js"></script>
+    <script type="text/javascript" src="js/entities/importador.js"></script>
+    <script type="text/javascript" src="js/entities/solicitudesCarga.js"></script>
+    <script type="text/javascript" src="js/montarLogin.js"></script>
+    <script type="text/javascript" src="js/datos.js"></script>
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/validations/validate.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
 </head>
+
+<!--CABEZAL DE NAVEGACION CON MENU-->
 
 <body>
     <div id="contenedor">
         <div id="cabezal" class="clearfix">
             <img id="logo" src="css/images/cyd.png" alt="logo">
+            <br>
+            <br>
+            <br>
             <ul id="navPrincipalEmpresa">
-                <li id="btnSeccionEmpresa">
-                    <a>Pestaña 1</a>
+                <li>
+                    <a id="btnInicio">Inicio</a>
                 </li>
-                <li id="btnSeccionEstadisticasEmpresa">
-                    <a>Pestaña 2</a>
+                <li>
+                    <a id="btnSeccionEstadisticasEmpresa">Información estadistica</a>
                 </li>
-                <li id="btnLogOutEmpresa">
-                    <a>Pestaña 3</a>
+                <li>
+                    <a id="btnLogout">Cerrar sesión</a>
                 </li>
+
             </ul>
+            <span class="mensajeBienvenida" id="mensajeBienvenida"></span>
         </div>
 
+
+
+        <!--SELECCIONAR PERFIL-->
+
         <div id="contenido">
-            <div id="seccionInicio">
+            <div id="selectionProfile">
                 <h1>Seleccion Perfil</h1>
                 <input type="button" value="Empresa" id="btnEmpresa"><br><br>
                 <input type="button" value="Importador" id="btnImportador"><br>
+                <hr>
             </div>
-            <hr>
+
+
+            <!--LOGIN EMPRESA-->
+
             <div id="seccionLoginEmpresa">
-                <h1>Interfaz Login Empresa</h1>
+                <h1>Login Empresa</h1>
 
                 <label for="txtNombreEmpresa">Nombre de usuario:</label>
                 <input type="text" id="txtNombreEmpresa"><br>
                 <label for="txtContrasenaEmpresa">Contraseña:</label>
-                <input type="password" id="txtContrasenaEmpresa"><br><br>
+                <input type="text" id="txtContrasenaEmpresa"><br><br>
+                <!--AL FINALIZAR OBLIGATORIO COLOCAR TYPE PASSWORD-->
 
                 <input type="button" value="Ingresar" id="btnIngresarEmpresa">
                 <p id="pAvisosLoginEmpresa"></p>
+                <hr>
             </div>
-            <hr>
+
+
+            <!--LOGIN IMPORTADOR-->
+
+
             <div id="seccionLoginImportador">
-                <h1>Interfaz Login Importador</h1>
+                <h1>Login Importador</h1>
 
                 <label for="txtNombreImportador">Nombre de usuario:</label>
                 <input type="text" id="txtNombreImportador"><br>
                 <label for="txtContrasenaImportador">Contraseña:</label>
-                <input type="password" id="txtContrasenaImportador"><br><br>
+                <input type="text" id="txtContrasenaImportador"><br><br>
+                <!--AL FINALIZAR OBLIGATORIO COLOCAR TYPE PASSWORD-->
+
 
                 <input type="button" value="Ingresar" id="btnIngresarImportador">
-                <p id="pAvisosLoginImportador"></p>
+                <p> Si no tienes usuario, registrarse <button id="btnRegistro">aquí.</button></p>
+                <p id="pAvisosLoginImportador"></p> 
+                <hr>
+
+                <br><br>
             </div>
 
-            <br><br>
-            <hr>
+
+            <!--REGISTRO IMPORTADOR-->
+
             <div id="seccionRegistro">
-                <h3>Registro Importador</h3>
+                <h1>Registro Importador</h1>
                 <label for="nombreRegistro">Ingrese su nombre:</label>
                 <input type="text" id="nombreRegistro"><br><br>
                 <label for="usernameRegistro">Ingrese username:</label>
@@ -71,33 +108,231 @@
                 <input type="password" id="passwordRegistro">
                 <h6>(La contraseña deberá tener un minimo de 5 caracteres, <br> contando con
                     al menos una mayúscula y un número.)</h6>
-                <label for="passwordRegistro">Seleccione una foto de perfil </label>
-                <form name="subida-imagenes" type="POST" enctype="multipart/formdata">
-                    <input type="file" name="imagen" />
-                </form>
+                <label for="picture">Seleccione una foto de perfil </label>
+
+                <ul id="imagesPerfil">
+
+                    <li> <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/1.jpg" width="100" id="imagen1" />
+                        <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/2.jpg" width="100" id="imagen2" />
+                        <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/3.jpg" width="100" id="imagen3" />
+                        <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/4.jpg" width="100" id="imagen4" aria-disabled="true"/>
+                    </li>
+                    <li> <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/5.jpg" width="100" id="imagen5" />
+                        <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/6.jpg" width="100" id="imagen6" />
+                        <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/7.jpg" width="100" id="imagen7" />
+                        <img width=100 onclick="javascript:this.width=187" ondblclick="javascript:this.width=100"
+                            src="./css/images/logos_importadores/8.jpg" width="100" id="imagen8" />
+                    </li>
+                </ul>
                 <br>
                 <br>
                 <input type="button" value="Registrar" id="btnRegistrar">
                 <p id="pAvisosRegistro"></p>
-                <div id="seccionBotonVolver">
-                    <input type="button" value="Volver" id="btnVolver">
-                </div>
+                <input type="button" value="Volver" id="btnVolver">
+                <hr><br>
             </div>
-            <hr><br>
 
-            <div id="seccionCancelacionSolicitudCarga">
+
+            <!--EMPRESA: CREACION DE UN VIAJE  /// Tabla Viaje-->
+
+            <div id="creacionViaje">
+                <h1>Creación de un viaje</h1>
+
+                <label for="txtNombreBuque">Nombre del buque:</label>
+                <input type="text" id="txtNombreBuque"><br>
+                <label for="cantidadContenedores">Cantidad máxima de contenedores:</label>
+                <input type="number" id="cantidadContenedores"><br>
+                <label for="selectEmpresa">Empresa a la que pertenece:</label><select id="selectEmpresa">
+                    <option value="" selected>--- Seleccione ---</option>
+                    <option value="empresa1">Empresa 1 </option>
+                    <option value="empresa2">Empresa 2</option>
+                </select><br>
+                <label for="fechaLlegada">Fecha de llegada:</label>
+                <input type="date" id="fechaLlegada"><br>
+
+                <br>
+                <input type="button" value="Crear" id="btnCrear">
+                <p id="pAvisoCreacionViaje"></p>
+                <hr>
+            </div>
+
+
+            <!--EMPRESA: ASIGNAR SOLICITUDES PENDIENTES-->
+
+            <div id="asignarSolicitudes">
+                <h1>Asignar solicitudes pendientes</h1>
+
+                <label for="solicitudesPendientes">Solicitudes pendientes:</label><select id="solicitudesPendientes">
+                    <option value="" selected>--- Seleccione ---</option>
+                    <option value="solicitud1">Solicitud 1 </option>
+                    <option value="solicitud2">Solicitud 2</option>
+                </select>
+                <br>
+                <br>
+                <label for="selectViaje" id="selectViaje">Seleccione viaje:</label><select id="selectViaje">
+                    <option value="" selected>--- Seleccione ---</option>
+                    <option value="viaje1">Viaje 1 </option>
+                    <option value="viaje2">Viaje 2</option>
+                </select>
+                <br>
+                <br>
+                <input type="button" value="Cargar" id="btnCargar">
+                <br>
+                <p id="pAvisoCreacionViaje">
+                    <span>Estado del importador:<p id="estadoImportador"></p></span>
+                    <span>Estado de la solicitud:<p id="estadoSolicitud"></p></span>
+                    <span> Identificación del viaje:<p id="idViaje"></p></span>
+                </p>
+                <hr>
+            </div>
+
+
+            <!--EMPRESA: ROLLOVER DE CARGA-->
+
+            <div id="rolloverCarga">
+                <h1>Rollover de carga</h1>
+
+                <label for="selectViajeOriginal">Selección de viaje original:</label><select id="selectViajeOriginal">
+                    <option value="" selected>--- Seleccione ---</option>
+                    <option value="viaje1">Viaje 1 </option>
+                    <option value="viaje2">Viaje 2</option>
+                </select>
+                <br>
+                <br>
+                <label for="selectViajeNuevo">Selección de nuevo viaje:</label><select id="selectViajeNuevo">
+                    <option value="" selected>--- Seleccione ---</option>
+                    <option value="viaje1">Viaje 1 </option>
+                    <option value="viaje2">Viaje 2</option>
+                </select>
+                <br>
+                <br>
+
+                <p> Estado de cupos:
+                <p id="stateCupos"><b></b></p>
+                </p>
+                <br>
+                <br>
+                <input type="button" value="Rollear" id="btnRollear">
+                <br>
+                <hr>
+            </div>
+
+
+
+            <!--EMPRESA: CARGAS DE UN VIAJE-->
+
+            <div id="cargasViaje">
+                <h1>Cargas de un viaje</h1>
+
+                <label for="selectViaje">Seleccione viaje: </label> <select id="selectViaje">
+                    <option value="" selected>--- Seleccione ---</option>
+                    <option value="viaje1">Viaje 1 </option>
+                    <option value="viaje2">Viaje 2</option>
+                </select>
+                <br>
+                <br>
+                <table class="tablaSolicitud" id="tablaSolicitud">
+                    <tr>
+                        <th>Origen</th>
+                        <th>Contenedores</th>
+                        <th>Importador</th>
+                        <th>Descripción</th>
+                        <th><select id="slcTipoMercaderia">
+                                <option value="" selected>---Seleccione---</option>
+                                <option value="Peligrosa">CARGA_PELIGROSA</option>
+                                <option value="General">CARGA_GENERAL</option>
+                                <option value="Refrigerado">REFRIGERADO</option>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Hola Diego</td>
+                        <td>Hola Diego</td>
+                        <td>Hola Diego</td>
+                        <td>Hola Diego</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+                <p id="pAvisoCreacionViaje"></p>
+                <hr>
+            </div>
+
+
+
+            <!--EMPRESA: HABILITACION DE IMPORTADORES-->
+
+            <div id="habilitacionImportadores">
+                <h1>Habilitación de importadores</h1>
+
+                <br>
+                <br>
+                <table class="tablaHabilitacion" id="tablaHabilitacion">
+                    <tr>
+                        <th>Origen</th>
+                        <th>Contenedores</th>
+                        <th>Importador</th>
+                        <th>Descripción</th>
+                        <th>Tipo de carga</th>
+                        <th>Estado de solicitud</th>
+                        <th>Habilitar</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>Hola Diego</td>
+                        <td>Hola Diego</td>
+                        <td>Hola Diego</td>
+                        <td>Hola Diego</td>
+                        <td></td>
+                        <td><button id="enabled"> Habilitar</button></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button id="enabled"> Habilitar</button></td>
+                    </tr>
+
+
+                </table>
+                <hr>
+            </div>
+
+
+
+            <!--IMPORTADOR: SOLICITUDES DE CARGA-->
+
+            <div id="seccionSolicitudesCarga">
                 <h3>Solicitudes de carga</h3>
                 <br>
                 <input type="button" value="Crear" id="crearSolicitudCarga">
                 <br>
                 <br>
-                <table class="tablaSolicitud">
+                <table class="tablaSolicitud" id="tablaSolicitud">
                     <tr>
                         <th>Tipo de mercadería</th>
                         <th>Descripción</th>
                         <th>Puerto de origen</th>
                         <th>Cantidad contenedores</th>
-                        <th>ID Empresa</th>
+                        <th>Seleccionar</th>
+
                     </tr>
                     <tr>
                         <td> <select id="slcTipoMercaderia">
@@ -105,63 +340,62 @@
                                 <option value="General">CARGA_GENERAL</option>
                                 <option value="Refrigerado">REFRIGERADO</option>
                         </td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
+                        <td><input type="text" class="inputTabla"/></td>
+                        <td><input type="text"/></td>
+                        <td><input type="number"/></td>
+                        
+                        <td> <input type="checkbox"></td>
                     </tr>
-                    <tr>
-                        <td> <select id="slcTipoMercaderia">
-                                <option value="Peligrosa">CARGA_PELIGROSA</option>
-                                <option value="General">CARGA_GENERAL</option>
-                                <option value="Refrigerado">REFRIGERADO</option>
-                        </td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                    </tr>
-                    <tr>
-                        <td> <select id="slcTipoMercaderia">
-                                <option value="Peligrosa">CARGA_PELIGROSA</option>
-                                <option value="General">CARGA_GENERAL</option>
-                                <option value="Refrigerado">REFRIGERADO</option>
-                        </td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                        <td>Hola Ceci</td>
-                    </tr>
+
                 </table>
                 <br>
                 <br>
-                <input type="button" value="Cargar" id="cargarSolicitud"> <input type="button" value="Consulta"
-                    id="consultaSolicitud"> <input type="button" value="Cancelar Solicitud" id="cancelarSolicitud">
+                <input type="button" value="Cargar" id="cargarSolicitud"/> <input type="button" value="Consulta"
+                    id="consultaSolicitud"/> <input type="button" value="Cancelar Solicitud" id="cancelarSolicitud"/>
                 <br>
                 <br>
+                <hr>
             </div>
-            <hr>
+
+
+
+            <!--IMPORTADOR: INFORMACION ESTADISTICA-->
+
             <div id="seccionInformacionEstadisticaImportador">
                 <h3>Información Estadística Importador</h3>
-                <p id="pPorcCance">Porcentaje de Cancelaciones:</p>
-                <p id="pProxLlegadas">Proximas llegadas con carga de importaciones:</p>
-                <p id="pPorcentajeDifLin">Porcentaje de las diferentes lineas con las que ha cargado:</p>
-                <h6>(Solo se cuentan envíos no contenedores y se omiten las empresas con porcentaje cero.)</h6>
-                <div id="seccionBotonVolver">
-                    <input type="button" value="Volver" id="btnVolver">
-                </div>
+                <p>Porcentaje de Cancelaciones:
+                <p id="pPorcCance"> </p>
+                </p>
+                <p>Proximas llegadas con carga de importaciones:
+                <p id="pProxLlegadas"></p>
+                </p>
+                <p>Porcentaje de las diferentes lineas con las que ha cargado:
+                <p id="pPorcentajeDifLin"> </p>
+                </p>
+                <h6>(Solo se cuentan envíos no contenedores y se omiten las importador con porcentaje cero.)</h6>
+
             </div>
-        </div><!-- FIN CONTENIDO -->
+        </div>
+
+
+        <!-- FIN CONTENIDO -->
+
+
         <div id="pie" style="text-align: center">
             <a href="https://www.ort.edu.uy" target="_blank">
-                <img class="BotonOrt" src="css/ort.png" style="
+                <img class="BotonOrt" src="css/images/ort.png" style="
                 width: 65px;
                 margin-left: 5px;
                 margin-right: 5px;
       "> </a>
             </a>
-        </div><!-- FIN PIE -->
-    </div><!-- FIN CONTENEDOR -->
+        </div>
+
+        <!-- FIN PIE -->
+    </div>
+
+    <!-- FIN CONTENEDOR -->
+
 </body>
 
 </html>

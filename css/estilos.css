@@ -3,6 +3,21 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
 
+
+
+#mensajeBienvenida {
+color:#ffffff;
+font-style: inherit;
+text-align: right;
+vertical-align: top;
+}
+
+.msgError {
+color: #FC5130;
+  
+}
+
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -57,6 +72,8 @@ table, th, td{
   border: #000 1px solid;
   padding:5px;
   background-color:#fff;
+  width: 10px;
+  
 }
 
 table img, td>input[type=button]{
@@ -115,12 +132,44 @@ p.ver-mas {
   padding: 0 24px 10px 0;
 }
 
-#navPrincipal a {
-  color: #FFFAFF;
+/* use este para el nav*/ 
+
+#navPrincipalEmpresa a{
+  color: #ffffff;
   cursor: pointer;
   color: #fff;
-  font-size: 14px;
+  font-size: 15px;
+
+
 }
+/* use este también para el nav*/ 
+
+#navPrincipalEmpresa li {
+  font-family: 'Roboto Flex', sans-serif;
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 2px solid #FFFAFF;
+  margin: 10px;
+  float: left;
+
+}
+
+/* para imagenes de perfil*/
+#imagesPerfil li {
+  
+  list-style-type: none;
+  padding: 10px;
+  border-bottom: 2px solid #FFFAFF;
+  margin: 10px;
+  float: center;
+
+}
+ /* mensaje bienvenida */
+
+
+
+ 
+
 
 #navPrincipalGestor a {
   color: #FFFAFF;
@@ -136,6 +185,7 @@ p.ver-mas {
   font-size: 14px;
 }
 
+
 #navPrincipal {
   float: right;
   margin-top: 5px;
@@ -143,20 +193,14 @@ p.ver-mas {
   max-width: 400px;
 }
 
+
+
+
 #navPrincipalGestor {
   float: right;
   margin-top: 5px;
   margin-right: 10px;
   max-width: 400px;
-}
-
-#navPrincipal li {
-  font-family: 'Roboto Flex', sans-serif;
-  list-style-type: none;
-  padding: 10px;
-  border-bottom: 2px solid #FFFAFF;
-  margin: 5px;
-  float: left;
 }
 
 #navPrincipalGestor li {
@@ -207,19 +251,21 @@ p.ver-mas {
 
 input,
 select, textarea {
-  background-color: #303036;
-  color: #FFFAFF;
-  border: 1px solid #ccc;
-  padding: 5px 10px;
-  font-family: 'Roboto Flex', sans-serif;
-  min-width: 200px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid rgb(25, 24, 24);
+  padding: auto;
+  font-family: 'Roboto Flex', sans-serif, black;
+  min-width:auto;
   border-radius: 5px;
   font-size:14px;
+  width: auto;
 }
 
 input[type="button"] {
   background-color: #303036;
   color: #fff;
+  
 }
 
 #pie a {
